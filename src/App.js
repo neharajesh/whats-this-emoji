@@ -5,10 +5,11 @@ var headingText = "What's This Emoji?";
 var color = "lightblue";
 
 var emojiDictionary = {
-  a: "aah",
-  b: "bee",
-  c: "sea",
-  tushar: "love",
+  "😊": "smiling",
+  "😂": "laughing",
+  "😢": "crying",
+  tushar: "iloveyou",
+  "🐱‍👤": "ninja cat",
   "🍇": "grapes",
   "🍉": "watermelon",
   "🥔": "potato"
