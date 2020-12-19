@@ -1,31 +1,35 @@
 import React, { useState } from "react";
 import "./styles.css";
 
-var headingText = "What's this emoji?";
+var headingText = "What's This Emoji?";
 var color = "lightblue";
 
-var tusharCount = 0;
+var emojiDictionary = {
+  a: "aah",
+  b: "bee",
+  c: "sea",
+  tushar: "love",
+  "🍇": "grapes",
+  "🍉": "watermelon",
+  "🥔": "potato"
+};
 
 export default function App() {
-  const [count, setCount] = useState(0);
+  const [meaning, setMeaning] = useState("");
 
-  function clickHandler() {
-    tusharCount = tusharCount + 1;
-    console.log("is Nehas " + tusharCount);
+  function inputEventHandler(event) {
+    var userInput = event.target.value;
+    var meaning = emojiDictionary[userInput];
+    if (meaning === undefined) {
+      meaning = "not in our DB yet :(";
+    }
+    setMeaning(meaning);
   }
-
-  function incrementCounter() {
-    var newCount = count + 1;
-    setCount(newCount);
-  }
-
   return (
     <div className="App">
       <h1 style={{ backgroundColor: color }}>{headingText}</h1>
-      <div>
-        <button onClick={clickHandler}> Tushar </button>
-      </div>
-      <button onClick={incrementCounter}>Increment Counter!</button> {count}
+      <input onChange={inputEventHandler}></input>
+      <div>{meaning}</div>
     </div>
   );
 }
