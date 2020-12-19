@@ -15,6 +15,8 @@ var emojiDictionary = {
   "🥔": "potato"
 };
 
+var emojisWeKnow = Object.keys(emojiDictionary);
+
 export default function App() {
   const [meaning, setMeaning] = useState("");
 
@@ -26,11 +28,31 @@ export default function App() {
     }
     setMeaning(meaning);
   }
+
+  function showEmojiOnClick(emoji) {
+    setMeaning(emojiDictionary[emoji]);
+  }
+
   return (
     <div className="App">
       <h1 style={{ backgroundColor: color }}>{headingText}</h1>
       <input onChange={inputEventHandler}></input>
-      <div>{meaning}</div>
+      <div
+        style={{ fontSize: "1.5rem", padding: "0.5rem", paddingTop: "1rem" }}
+      >
+        {meaning}
+      </div>
+
+      <h3> Emojis we know : </h3>
+      {emojisWeKnow.map((emoji) => (
+        <span
+          key={emoji}
+          style={{ fontSize: "2rem", cursor: "pointer" }}
+          onClick={() => showEmojiOnClick(emoji)}
+        >
+          {emoji}
+        </span>
+      ))}
     </div>
   );
 }
