@@ -8,7 +8,6 @@ var emojiDictionary = {
   "😊": "smiling",
   "😂": "laughing",
   "😢": "crying",
-  tushar: "iloveyou",
   "🐱‍👤": "ninja cat",
   "🍇": "grapes",
   "🍉": "watermelon",
