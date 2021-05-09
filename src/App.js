@@ -11,7 +11,8 @@ var emojiDictionary = {
   "🐱‍👤": "ninja cat",
   "🍇": "grapes",
   "🍉": "watermelon",
-  "🥔": "potato"
+  "🥔": "potato",
+  "😁": "grinning"
 };
 
 var emojisWeKnow = Object.keys(emojiDictionary);
